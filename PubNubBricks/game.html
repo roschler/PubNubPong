@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PubNub Pong</title>
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+
+    <script src="js/common.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.pubnub.com/pubnub.min.js"></script>
+</head>
+<body onload="App()">
+
+    <div id="game">
+        <div id="overlay"></div>
+        <div id="overlay-small"></div>
+        <div id="intro">
+            <h1>Welcome to PubNub Pong!</h1>
+            <p>This game uses the following technologies:</p>
+            <dl>
+                <dt>pubnub.js:</dt>
+                <dd>The <a href="http://pubnub.com/">PubNub</a> real-time messaging service powers the multi-user features of this game.</dd>
+                <dt>WebGL:</dt>
+                <dd>A JavaScript API for rendering interactive 3D and 2D graphics within the browser, without the user of any plug-ins, and takes advantage of hardware acceleration on the GPU.</dd>
+                <br>
+                <br>
+                <dt>Three.js:</dt>
+                <dd>This lightweight JavaScript library has been used for creating and displaying 3D graphics on the web browser using WebGL.</dd>
+                <br>
+                <br>
+                <dt>Stats.js:</dt>
+                <dd>This class has been used for monitoring the performance of the game.</dd>
+            </dl>
+            <p>Press the button below to start the game</p>
+            <p class="start"><a class="button">Start</a></p>
+        </div>
+        <div id="paused">
+            <p>Game paused...press the button below to continue</p>
+            <p class="continue"><a class="button">Continue</a></p>
+        </div>
+        <div id="game-stats">
+            <dl>
+                <!--<dt class="score">Player 1 Score:</dt>-->
+                <dd id="player1_score" class="score">Player 1: 0</dd>
+                <br />
+                <!--<dt class="score">Player 2 Score:</dt>-->
+                <dd id="player2_score" class="score">Player 2: 0</dd>
+            </dl>
+        </div>
+        <div id="lose">
+            <h1>Game over!</h1>
+            <p>Press the button below to restart the game</p>
+            <p class="restart"><a href="" class="button">Restart</a></p>
+        </div>
+        <div id="reset">
+            <h1>Ball missed!</h1>
+            <p>Press the button below to continue</p>
+            <p class="reset"><a class="button">Continue</a></p>
+        </div>
+        <div id="win">
+            <h1>Level Complete!</h1>
+        </div>
+        <div id="waiting_for_remote_player">
+            <h1>Waiting for your opponent to start the game.</h1>
+        </div>
+    </div> <!-- Main -->
+
+    <script type="text/javascript" src="libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="libraries/three.min.js"></script>
+    <script type="text/javascript" src="libraries/stats.min.js"></script>
+    <script type="text/javascript" src="data/game-data.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/objects/balls.js"></script>
+    <script type="text/javascript" src="js/objects/bricks.js"></script>
+    <script type="text/javascript" src="js/objects/paddles.js"></script>
+    <script type="text/javascript" src="js/objects/walls.js"></script>
+    <script type="text/javascript" src="js/lights/lights.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/start.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/pubnub/pubnub_lobby_and_chat.js"></script>
+    <script type="text/javascript" src="js/pubnub/pubnub_pong.js"></script>
+
+    <!-- Set up our page exit handler to make sure we unsubscribe from PubNub before leaving the page. -->
+    <script>
+        window.onbeforeunload = leavePage;
+    </script>
+</body>
+</html>

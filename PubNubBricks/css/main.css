@@ -1,0 +1,38 @@
+﻿/* This code is courtesy of PubNub via Ian Jennings excellent tutorial series:
+
+    http://www.pubnub.com/blog/creating-private-chat-requests-with-popup-alerts/ 
+
+    This is the CSS for the chat lobby.
+*/
+body {
+  padding: 10px;
+}
+
+#chat-output, .private-chat-output {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+#online-users .list-group-item {
+  cursor: pointer;
+  user-select: none;
+}
+
+#online-users .list-group-item:hover {
+  text-decoration: underline;
+}
+
+.modal .panel {
+  margin-bottom: 0px;
+}
+
+.modal .modal-footer {
+  margin-top: 0px;
+}
+
+/*.clickable-list-item {
+  // Use the arrow cursor so the user knows they can click on a user in the Online users list. 
+  cursor: pointer;
+  user-select: none;
+}
+*/
